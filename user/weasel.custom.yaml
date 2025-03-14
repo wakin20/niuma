@@ -1,0 +1,76 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Wed May 15 20:51:06 2024"
+  rime_version: 1.11.2
+patch:
+  app_options:
+    cmd.exe:
+      ascii_mode: true
+    conhost.exe:
+      ascii_mode: true
+    EmEditor.exe:
+      ascii_mode: true
+    TotalCMD64.exe:
+      ascii_mode: true
+    explorer.exe:
+      ascii_mode: true
+    Listary.exe:
+      ascii_mode: true
+    mpv.exe:
+      ascii_mode: true
+    chrome.exe:
+      ascii_mode: true
+  preset_color_schemes:
+    qishu:
+      back_color: 0x53473d
+      border_color: 0x53473d
+      candidate_text_color: 0xcef686
+      comment_text_color: 0xcef686
+      hilited_back_color: 0x53473d
+      hilited_candidate_back_color: 0x53473d
+      hilited_candidate_text_color: 0xae96fb
+      hilited_comment_text_color: 0x82caa6
+      hilited_mark_color: 0x6fd99d
+      hilited_text_color: 0x82caa6
+      name: "祈澍"
+      text_color: 0xae96fb
+    wakin:
+      back_color: 0x6f444444
+      border_color: 0x82e6ca
+      candidate_text_color: 0xffffff
+      comment_text_color: 0x696969
+      hilited_back_color: 0x00ffffff
+      hilited_candidate_back_color: 0x82e6ca
+      hilited_candidate_text_color: 0x000000
+      hilited_label_color: 0x000000
+      hilited_mark_color: 0xffffffff
+      hilited_text_color: 0x82e6ca
+      label_color: 0xffffff
+      name: "孤寺改/lost_temple_mod"
+      shadow_color: 0x6b68635F
+      text_color: 0xe8f3f6
+  style:
+    color_scheme: qishu
+    color_scheme_dark: qishu
+    font_face: "TH-Times, newma, Noto Color Emoji, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P16, TH-Tshyn-P2"
+    font_point: 14
+    label_font_point: 10
+    horizontal: true
+    inline_preedit: true
+    label_format: "%s"
+    mark_text: "🍀"
+    layout:
+      align_type: center
+      border_width: 0
+      candidate_spacing: 10
+      corner_radius: 10
+      hilite_padding: 4
+      hilite_spacing: 4
+      margin_x: 0
+      margin_y: 0
+      round_corner: 6
+      shadow_offset_x: "-4"
+      shadow_offset_y: 4
+      shadow_radius: 10

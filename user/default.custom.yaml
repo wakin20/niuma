@@ -1,0 +1,25 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Tue Feb 14 09:38:09 2024"
+  rime_version: 1.11.2
+
+patch:
+  schema_list:
+    - {schema: niumawb}
+    - {schema: terra_pinyin}
+    - {schema: nmzg}
+  menu:
+    alternative_select_labels: [ " ", ❷, ❸, ❹, ❺, ❻, ❼, ❽, ❾ ]
+  key_binder:
+    select_first_character: "bracketleft"  # 左中括号 [
+    select_last_character: "bracketright"  # 右中括号 ]
+    bindings:
+      - { when: has_menu, accept: Left, send: Up }
+      - { when: has_menu, accept: Right, send: Down }
+      - { when: has_menu, accept: minus, send: Page_Up }  #-向前翻页     
+      - { when: has_menu, accept: equal, send: Page_Down }  #+向后翻页     
+      - { when: has_menu, accept: semicolon, send: 2 }      #分號次選
+      - { when: has_menu, accept: apostrophe, send: 3 }     #撇號三選
+      - { when: has_menu, accept: Tab, send: 4 }

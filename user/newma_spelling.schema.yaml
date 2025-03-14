@@ -1,0 +1,16 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: newma_spelling
+  name: 拆分
+  version: "20.05"
+  author:
+  description: |
+    伪方案，不能打字。
+    不要选我，不要修改本方案及配套词典。
+    仅用于辅助三重注解方案实现注解功能。
+
+translator:
+  dictionary: newma_spelling
+  enable_user_dict: false
