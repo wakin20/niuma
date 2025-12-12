@@ -39,13 +39,12 @@ switches:
     reset: 0
     states: [ 🈚️, 🈶️ ]
   - name: ascii_mode
-    reset: 1
+    reset: 0
     states: [ 中, En ]
   - name: full_shape
     states: [ 半, 全 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
-
 
 engine:
   processors:
@@ -74,12 +73,10 @@ engine:
     - script_translator@terra_pinyin
     - script_translator@terra_pinyin_lookup
     - table_translator@stroke_lookup
-    - lua_translator@*number # 数字转大写
-    - lua_translator@*shijian2 # 高级时间
+    - lua_translator@*number_translator # 数字转大写
+    - lua_translator@*shijian
     - lua_translator@*unicode #Unicode轉字符
-    - lua_translator@*calculator_translator
     - lua_translator@*start 
-    - lua_translator@*lunar
     - lua_translator@*emoji
   filters:
     - lua_filter@*unicode_info #lua unicode显示滤镜
@@ -180,7 +177,7 @@ stroke_reverse_lookup:
 simplifier:
   option_name: traditionalization
   opencc_config: s2t.json
-#  show_in_comment: true
+  show_in_comment: true
   tags: 
     - abc
   tips: all
@@ -200,7 +197,7 @@ pinyin:
   tags:
     - abc
     - niumawb  
-
+  
 punctuator:
   import_preset: symbols
 
@@ -208,7 +205,6 @@ key_binder:
   import_preset: default
   bindings:
     - { when: has_menu, accept: "Control+Shift+E", toggle: emoji }
-    - { when: has_menu, accept: "Control+Shift+T", toggle: traditionalization }
     - { when: has_menu, accept: "Control+Shift+P", toggle: pinyin }
     - { when: has_menu, accept: "Control+Shift+U", toggle: uninfo }
 
@@ -220,8 +216,7 @@ recognizer:
     stroke_lookup: "`/([hspnz]+)*$"
     punct: "^/([0-9]0?|[A-Za-z]+)$"
     unicode: "^U[0-9a-f]+"
-    gregorian_to_lunar: "^N[0-9]{1,8}"
-    expression: "^=.*$"
+    number_translator: "^S[0-9]+[.]?[0-9]*"
 
 style:
   color_scheme: wakin
