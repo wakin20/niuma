@@ -22,6 +22,10 @@ patch:
       ascii_mode: true
     chrome.exe:
       ascii_mode: true
+    goldendict.exe:
+      ascii_mode: true
+    dopus.exe:
+      ascii_mode: true    
   preset_color_schemes:
     qishu:
       back_color: 0x53473d
@@ -54,8 +58,11 @@ patch:
   style:
     color_scheme: qishu
     color_scheme_dark: qishu
-    font_face: "TH-Times, newma, Noto Color Emoji, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P16, TH-Tshyn-P2"
+    font_face: "TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, newma, Noto Color Emoji"
     font_point: 14
+    comment_font_face: "霞鹜文楷 GB, newma"
+    comment_font_point: 14
+    label_font_face:
     label_font_point: 10
     horizontal: true
     inline_preedit: true

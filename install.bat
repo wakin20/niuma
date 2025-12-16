@@ -120,6 +120,7 @@ reg DELETE HKEY_CURRENT_USER\Software\Rime /f >nul 2>nul
 reg DELETE HKLM\Software\Microsoft\Windows\CurrentVersion\Run\ /v WeaselServer /f >nul 2>nul
 del /q "%WEASEL%\user\installation.yaml" >nul 2>nul
 del /q "%WEASEL%\user\user.yaml" >nul 2>nul
+timeout /t 1 /nobreak >nul
 if "%uninstall_choice%"=="1" (
   goto :dangerous
 ) else if "%install_choice%"=="1" (
@@ -139,12 +140,9 @@ if "%main_choice%"=="1" (
 "%WEASEL%\WeaselSetup.exe" /u
 reg DELETE HKEY_CURRENT_USER\Software\Rime /f >nul 2>nul
 reg DELETE HKLM\Software\Microsoft\Windows\CurrentVersion\Run\ /v WeaselServer /f >nul 2>nul
-rmdir  /s/q  "%WEASEL%\user"
+rmdir  /s /q  "%WEASEL%\user"
 md "%WEASEL%\user"
-type nul > "%WEASEL%\user\default.custom.yaml"
-type nul > "%WEASEL%\user\weasel.custom.yaml"
-echo F|xcopy "%WEASEL%\data\weasel.yaml" "%WEASEL%\user\build\weasel.yaml" >NUL
-echo F|xcopy "%WEASEL%\data\default.yaml" "%WEASEL%\user\build\default.yaml" >NUL
+xcopy /E "%WEASEL%\user_default\*" "%WEASEL%\user" >nul 2>nul
 echo 危险卸载完成！
 if "%main_choice%"=="1" (
   goto :install
@@ -166,8 +164,6 @@ reg ADD HKEY_CURRENT_USER\Software\Rime\Weasel\Updates /v CheckForUpdates /d 0 >
 "%WEASEL%\WeaselSetup.exe" /i
 "%WEASEL%\WeaselDeployer.exe" /install
 reg ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v WeaselServer /d "%WEASEL%\WeaselServer.exe" /f >nul 2>nul
-echo n|xcopy /i "%WEASEL%\data\weasel.yaml" "%WEASEL%\user\build\weasel.yaml" >nul
-echo n|xcopy /i "%WEASEL%\data\default.yaml" "%WEASEL%\user\build\default.yaml" >nul
 start "" "%WEASEL%\WeaselServer.exe"
 echo 安装完成
 goto :goback

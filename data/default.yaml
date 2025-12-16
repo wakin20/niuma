@@ -4,9 +4,16 @@
 config_version: '0.40'
 
 schema_list:
-  - schema: terra_pinyin
+  - schema: stzm
+  - schema: pinyin_xq
+  - schema: luna_pinyin
+  - schema: luna_pinyin_simp
+  - schema: luna_pinyin_fluency
+  - schema: bopomofo
+  - schema: bopomofo_tw
   - schema: cangjie5
   - schema: stroke
+  - schema: terra_pinyin
 
 switcher:
   caption: 〔方案選擇〕
@@ -41,6 +48,7 @@ key_binder:
       - key_bindings:/paging_with_minus_equal
       - key_bindings:/paging_with_comma_period
       - key_bindings:/numbered_mode_switch
+      #- key_bindings:/windows_compatible_mode_switch
 
 recognizer:
   patterns:
