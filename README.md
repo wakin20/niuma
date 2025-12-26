@@ -6,7 +6,7 @@
 ## 1.牛码五笔
 
 牛码五笔是一套基于五笔98优化改良的大字根方案。官方QQ群：38288512。牛码五笔字根图：
-![https://github.com/wakin20/niuma/blob/main/other/%E7%89%9B%E7%A0%81%E4%BA%94%E7%AC%94%E7%B9%81%E4%BD%93%E5%AD%97%E6%A0%B9%E5%9B%BE.png]
+![[https://github.com/wakin20/niuma/blob/main/other/%E7%89%9B%E7%A0%81%E4%BA%94%E7%AC%94%E7%B9%81%E4%BD%93%E5%AD%97%E6%A0%B9%E5%9B%BE.png]]
 牛码五笔和传统王码五笔的主要区别已经在字根图下方说明。
 
 
