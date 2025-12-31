@@ -22,15 +22,15 @@
 - 我设置了所有快捷键都是在有候选框时按下才有用。（为了防止与系统或其他软件快捷键冲突）
 1. 牛码“三重注解”显示。即显示字（词）的拆分、编码、拼音（词不能显示拼音，以后再完善）。按“Ctrl+Shift+c”可以循环显示。来自[徐码](https://github.com/Ace-Who/rime-xuma)，感谢！
 
-![image](/other/三重注解.png)
+  ![image](/other/三重注解.png)
 
 2. 显示字符的Unicode信息。开关快捷键是“Ctrl+Shift+u”。
 
-![image](/other/字符Unicode信息.png)
+  ![image](/other/字符Unicode信息.png)
 
 3. Unicode码转字符。引导键是“U”，后面跟Unicode码。
 
-![image](/other/U转字符.png)
+  ![image](/other/U转字符.png)
 
 4. 各种时间显示。来自[万象](https://github.com/amzxyz/rime_wanxiang),目前还有点小问题。输入相应编码即可显示（默认显示在候选项最后）。
 
@@ -63,8 +63,6 @@
 把25年最后一周显示成本年第1周。
 
 5. 数字、人民币转大写，引导键是“S”，后跟数字和小数点。
-
-数字：
 
 ![image](/other/数字.png)
 
