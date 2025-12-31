@@ -25,30 +25,47 @@
 ![image](/other/三重注解.png)
 
 2. 显示字符的Unicode信息。开关快捷键是“Ctrl+Shift+u”。
+
 ![image](/other/字符Unicode信息.png)
 
 3. Unicode码转字符。引导键是“U”，后面跟Unicode码。
+
 ![image](/other/U转字符.png)
 
 4. 各种时间显示。来自[万象](https://github.com/amzxyz/rime_wanxiang),目前还有点小问题。输入相应编码即可显示（默认显示在候选项最后）。
+
 時間：
+
 ![image](/other/時間.png)
+
 日期：
+
 ![image](/other/日期.png)
+
 農曆：
+
 ![image](/other/農曆.png)
+
 節氣：
+
 ![image](/other/節氣.png)
+
 何意日期及农历反查：
+
 ![image](/other/农历反查.png)
+
 农历反查引导键“N”，后接数字（不能超过8位）。可查1900年到2100年所有农历。
 
 小问题：
+
 ![image](/other/小问题.png)
+
 把25年最后一周显示成本年第1周。
 
 5. 数字、人民币转大写，引导键是“S”，后跟数字和小数点。
+
 数字：
+
 ![image](/other/数字.png)
 
 6. emoji 来自[万象](https://github.com/amzxyz/rime_wanxiang)，平时我是关闭的，开关快捷键是“Ctrl+Shift+e”。要安装emoji字体。
