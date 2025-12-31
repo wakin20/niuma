@@ -8,9 +8,6 @@
 ![image](/other/牛码五笔繁体字根图.png)
 牛码五笔和传统王码五笔的主要区别已经在字根图下方说明。
 
-
-
-
 ## 2.小狼毫
 
 小狼毫输入法平台本人做了一些精简，去掉了我用不到的plum功能，新增了水龙月大佬提供的便携安装文件（install.bat）。你只需要下载除other文件夹外的整个包，解压到同一个文件夹下，双击install.bat，按提示操作即可。当然更推荐你使用[官方](https://rime.im)的小狼毫安装程序，这样你只要下载user文件夹下的文件放到你用户文件夹下，重新部署就行了。
@@ -25,10 +22,13 @@
 - 我设置了所有快捷键都是在有候选框时按下才有用。（为了防止与系统或其他软件快捷键冲突）
 1. 牛码“三重注解”显示。即显示字（词）的拆分、编码、拼音（词不能显示拼音，以后再完善）。按“Ctrl+Shift+c”可以循环显示。来自[徐码](https://github.com/Ace-Who/rime-xuma)，感谢！
 ![image](/other/三重注解.png)
+
 2. 显示字符的Unicode信息。开关快捷键是“Ctrl+Shift+u”。
 ![image](/other/字符Unicode信息.png)
+
 3. Unicode码转字符。引导键是“U”，后面跟Unicode码。
 ![image](/other/U转字符.png)
+
 4. 各种时间显示。来自[万象](https://github.com/amzxyz/rime_wanxiang),目前还有点小问题。输入相应编码即可显示（默认显示在候选项最后）。
 時間：
 ![image](/other/時間.png)
@@ -45,12 +45,17 @@
 小问题：
 ![image](/other/小问题.png)
 把25年最后一周显示成本年第1周。
+
 5. 数字、人民币转大写，引导键是“S”，后跟数字和小数点。
 数字：
 ![image](/other/数字.png)
+
 6. emoji 来自[万象](https://github.com/amzxyz/rime_wanxiang)，平时我是关闭的，开关快捷键是“Ctrl+Shift+e”。要安装emoji字体。
+
 7. 拼音反查，引导键是“\`”,后接拼音。笔画反查，引导键是“\`/”，后接hspnz。
+
 8. "/"加数字和字母还有更多符号显示，详见user\symbols.yaml。
+
 9. 还有就是我把候选相应繁体显示在候选注释里，但不上屏，要上屏可以按“Ctrl+Shift+Enter”。
 
 ## 5.字符显示的说明
