@@ -1,0 +1,175 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: niumawb
+  name: "牛碼五筆"
+  version: "2.0"
+  author:
+    - 方案 陈自鸣
+  description: |
+    三码定字 取码直观 重码率低 大字符集
+  dependencies:
+#    - niuma_spelling
+#    - terra_pinyin
+#    - stroke
+  icon: niuma.ico
+  ascii_icon: en.ico
+  full_icon: full.ico
+  half_icon: half.ico
+
+switches:
+  - name: traditionalization
+    reset: 1
+    states: [ 简, 繁 ]
+  - options:
+      - niuma_chaifen.off
+      - niuma_chaifen.lv1
+      - niuma_chaifen.lv2
+      - niuma_chaifen.lv3
+    reset: 0
+    states: [ 〇注解, 一重注解, 二重注解, 三重注解 ]
+  - name: uninfo
+    states: [ 〇, JU ] 
+  - name: pinyin
+    states: [ 形, 音 ]
+  - name: emoji
+    states: [ 🈚️, 🈶️ ]
+  - name: CJK2SmallSeal
+    states: [ ]
+  - name: ascii_mode
+    reset: 1
+    states: [ 中, En ]
+  - name: full_shape
+    states: [ 半, 全 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - lua_processor@*select_character
+    - lua_processor@*niuma.niuma_chaifen_processor
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - lua_translator@*number_translator
+    - lua_translator@*shijian
+    - lua_translator@*unicode
+    - reverse_lookup_translator
+    - reverse_lookup_translator@stroke_reverse_lookup
+  filters:
+    - simplifier
+    - lua_filter@*niuma.niuma_chaifen_filter
+    - lua_filter@*multiline*Multiline_filter
+    - lua_filter@*unicode_info     
+    - simplifier@emoji
+    - simplifier@pinyin
+    - simplifier@CJK2SmallSeal
+    - uniquifier
+
+schema_name: 
+  code: niuma
+  spelling: niuma_spelling
+
+niuma_chaifen:
+  lua:
+    switch_key: "Control+c"
+    cycle_key: "Shift+Control+C"
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz"
+  max_code_length: 4
+  auto_clear: max_length
+
+translator:
+  dictionary: niumawb
+  initial_quality: 1
+  enable_sentence: false
+  enable_completion: true
+  enable_user_dict: false
+  preedit_format:
+#    - xform/[^ \+]+ //
+  comment_format:
+    - xform/~//
+
+reverse_lookup:
+  dictionary: terra_pinyin         
+  prefix: "`"                      
+  tips: "〔拼音〕"
+  preedit_format:    
+    __include: terra_pinyin.schema:/translator/preedit_format
+
+stroke_reverse_lookup:
+  dictionary: stroke             
+  prefix: "`/"                    
+  tips: "〔筆畫〕"
+  enable_completion: true
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+#    - 'xform/^([hspnz]+)$/$1\t（\U$1\E）/'   #這個配置不生效，不知何因。
+#    - xlit/HSPNZ/一丨丿丶乙/
+    
+simplifier:
+  option_name: traditionalization
+  opencc_config: s2t.json
+  show_in_comment: true
+  tips: all
+
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false
+  tips: none
+
+pinyin:
+  option_name: pinyin
+  opencc_config: pinyin.json
+  show_in_comment: true
+  comment_format:
+    - 'xform/;/ /'
+  tips: all
+
+CJK2SmallSeal:
+  option_name: CJK2SmallSeal
+  opencc_config: CJK2SmallSeal.json
+  show_in_comment: true
+  tips: all
+  
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  shijian_keys: ["/"]
+  bindings:
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: has_menu, accept: "Control+Shift+E", toggle: emoji }
+    - { when: has_menu, accept: "Control+Shift+P", toggle: pinyin }
+    - { when: has_menu, accept: "Control+Shift+U", toggle: uninfo }
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^`[a-z|a-z;<,>/\\\\-]*$"
+    stroke_reverse_lookup: "^`/[hspnz]*$"
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
+    unicode: "^U[0-9a-f]{1,5}"
+    number: "^S[0-9]+[.]?[0-9]*"
+
+#style:
+#  color_scheme: wakin

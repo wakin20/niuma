@@ -1,0 +1,9 @@
+# 空语法配置文件，用于消除Rime的警告
+# 详见：https://github.com/lotem/rime-octagram-data
+
+# 语言模型配置
+hant:
+  # 繁体中文相关配置
+
+hans:
+  # 简体中文相关配置
